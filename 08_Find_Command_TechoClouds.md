@@ -1,5 +1,5 @@
 
-# Chapter 08 - Find Command
+# Chapter on the Find Command
 
 ## Introduction
 
@@ -78,7 +78,6 @@ find [path...] [options] [expression]
      ```bash
      find . -type f -name "*.bak" -delete
      ```
-     This command deletes all `.bak` files in the current directory. It's a safer and more efficient method than using `-exec rm` because `-delete` is a primary of `find` and processes each matching file immediately after finding it, reducing the risk of accidental deletion of unintended files.
 
 9. **Find Empty Files and Directories**:
    - Files:
@@ -94,6 +93,28 @@ find [path...] [options] [expression]
     ```bash
     find /tmp -type f -name ".*"
     ```
+
+11. **Finding Files Based on Time Criteria**:
+   - Files modified within the last day:
+     ```bash
+     find / -mtime -1
+     ```
+   - Files not modified in the last 7 days:
+     ```bash
+     find / -mtime +7
+     ```
+   - Files accessed within the last 30 minutes:
+     ```bash
+     find / -amin -30
+     ```
+   - Files changed within the last 10 minutes:
+     ```bash
+     find / -cmin -10
+     ```
+   - Files modified after January 1, 2023:
+     ```bash
+     find / -newermt "2023-01-01"
+     ```
 
 ### Best Practices
 
