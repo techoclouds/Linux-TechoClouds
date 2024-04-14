@@ -1,5 +1,5 @@
 
-# Chapter 08 - the Find Command
+# Chapter 08 - Find Command
 
 ## Introduction
 
